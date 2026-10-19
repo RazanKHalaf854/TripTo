@@ -1,0 +1,279 @@
+.order-status-page {
+  padding: 30px;
+}
+
+.order-title {
+  margin-bottom: 20px;
+}
+
+/* CARD */
+.order-card {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* STEPPER */
+.order-stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  margin-top: 30px;
+}
+
+/* gray line */
+.order-stepper::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: #eee;
+  border-radius: 10px;
+  z-index: 0;
+  height: 6px;
+  border-radius: 20px;
+}
+
+/* green progress */
+.order-stepper::after {
+  content: "";
+  position: absolute;
+  top: 20px;
+  left: 0;
+  height: 6px;
+  background: linear-gradient(to right,#28a745,#5cd65c);
+  border-radius: 20px;
+  z-index: 1;
+  transition: 0.4s;
+}
+
+/* progress levels */
+.order-stepper[data-step="1"]::after { width: 25%; }
+.order-stepper[data-step="2"]::after { width: 50%; }
+.order-stepper[data-step="3"]::after { width: 75%; }
+.order-stepper[data-step="4"]::after { width: 100%; }
+
+/* step */
+.step {
+  position: relative;
+  text-align: center;
+  flex: 1;
+  z-index: 2;
+  font-size: 13px;
+  color: #999;
+}
+
+/* icon */
+.step svg {
+  font-size: 18px;
+  background: white;
+  padding: 10px;
+  border-radius: 50%;
+ 
+  color: #aaa;
+  transition: 0.3s;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+/* active */
+.step.active {
+  color: #28a745;
+  font-weight: 600;
+}
+
+.step.active svg {
+  color: #28a745;
+  filter: drop-shadow(0 0 6px rgba(40,167,69,0.6));
+  background: #eaffea;
+}
+.step.active:first-child svg {
+  box-shadow: 
+    0 0 0 6px rgba(40,167,69,0.15),
+    0 0 20px rgba(40,167,69,0.6);
+}
+.order-stepper::before {
+  top: 25px;
+}
+
+.order-stepper::after {
+  top: 25px;
+}
+.review-btn{
+    border:none;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  padding:12px 20px;
+  border-radius:14px;
+  background:linear-gradient(135deg,#28a745,#5cd65c);
+  color:white;
+  font-weight:700;
+  font-size:14px;
+  cursor:pointer;
+   box-shadow:
+    0 8px 20px rgba(40,167,69,0.25),
+    0 3px 8px rgba(0,0,0,0.08);
+
+  transition:0.3s ease;
+}
+.order-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap:20px;
+  margin-bottom:20px;
+}
+/* hover */
+.review-btn:hover{
+  transform:translateY(-2px) scale(1.03);
+
+  box-shadow:
+    0 12px 25px rgba(40,167,69,0.35),
+    0 5px 12px rgba(0,0,0,0.1);
+}
+
+/* click */
+.review-btn:active{
+  transform:scale(0.97);
+}
+.order-info{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.status-total{
+  display:flex;
+  flex-direction:column;
+  gap:3px;
+  color:#666;
+}
+.inline-review-box{
+  margin-top:15px;
+  width:320px;
+
+  background:white;
+  padding:18px;
+
+  border-radius:18px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.08);
+
+  border:1px solid #f0f0f0;
+
+  animation:fadeIn 0.3s ease;
+}
+
+.inline-review-box h3{
+  margin-bottom:12px;
+  color:#222;
+}
+
+.inline-review-box textarea{
+    width:100%;
+  min-height:100px;
+
+  border:1px solid #ddd;
+  border-radius:12px;
+
+  padding:12px;
+
+  box-sizing:border-box;
+
+  resize:none;
+
+  outline:none;
+
+  font-size:14px;
+}
+
+.inline-review-box textarea:focus{
+  border-color:#28a745;
+}
+
+.inline-review-box select{
+  width:100%;
+  margin-top:12px;
+
+  padding:10px;
+
+  border-radius:10px;
+  border:1px solid #ddd;
+
+  outline:none;
+}
+
+.submit-review-btn{
+  width:100%;
+  margin-top:14px;
+
+  border:none;
+
+  padding:12px;
+
+  border-radius:12px;
+
+  background:linear-gradient(135deg,#28a745,#5cd65c);
+
+  color:white;
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.3s;
+}
+
+.submit-review-btn:hover{
+  transform:translateY(-2px);
+}
+
+@keyframes fadeIn{
+
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+}
+.rating-stars{
+  display:flex;
+  gap:8px;
+  margin-bottom:14px;
+}
+
+.star{
+  font-size:24px;
+  cursor:pointer;
+  color:#dcdcdc;
+  transition:0.2s;
+}
+
+.star:hover{
+  transform:scale(1.15);
+}
+
+.active-star{
+  color:#ffc107;
+  filter:drop-shadow(0 0 5px rgba(255,193,7,0.5));
+}
+.review-section{
+  display:flex;
+  flex-direction: row-reverse;
+  align-items:flex-start;
+  gap:15px;
+}
+.inline-review-box{
+  margin-top:0;
+  width: 320px;
+}

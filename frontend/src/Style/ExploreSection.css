@@ -1,0 +1,159 @@
+/* ExploreSection.css */
+
+.explore-section {
+    padding: 40px 5%;
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.explore-header {
+    margin-bottom: 25px;
+}
+
+.explore-header h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.explore-header p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* الشبكة الأساسية */
+.explore-grid {
+    display: grid;
+    grid-template-columns: 2fr 0.5fr; /* الكرت الكبير بياخد مساحة أكبر */
+    gap: 20px;
+    align-items: start;
+}
+
+/* الكرت الكبير (اليسار) */
+.main-explore-card {
+    position: relative;
+    height: 445px;
+    border-radius: 15px;
+    
+    overflow: hidden;
+    border: 4px solid #1aa260; /* الإطار الأخضر اللي بالصورة */
+}
+
+.main-explore-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.main-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(0,0,0,0.7), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 40px;
+    color: white;
+}
+
+.main-overlay h1 {
+    font-size: 48px;
+    font-weight: bold;
+    max-width: 400px;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.main-overlay p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.badge {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    width: fit-content;
+}
+
+.explore-btn {
+    background-color: #1aa260;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: fit-content;
+    transition: background 0.3s;
+}
+
+.explore-btn:hover {
+    background-color: #1aa260;
+}
+
+/* القسم اليمين (الكروت الصغيرة) */
+.side-explore-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.small-explore-card {
+    position: relative;
+    height: 140px; /* تقريباً عشان يساع 3 كروت */
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.media-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.media-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* الأيقونة والبيانات فوق الصورة الصغيرة */
+.small-card-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    padding: 10px;
+    color: white;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    width: 100%;
+}
+
+.small-card-info h4 {
+    margin: 0;
+    font-size: 14px;
+}
+
+.play-icon-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.8);
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #10b981;
+}
+
+.rating-text {
+    font-size: 12px;
+    margin-left: 5px;
+}
+

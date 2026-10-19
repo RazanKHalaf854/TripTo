@@ -1,0 +1,327 @@
+/* ===== Main Wrapper ===== */
+
+.ar-wrapper {
+    background-color: #fdfdfd;
+    padding: 30px 50px;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* ===== Title ===== */
+
+.ar-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 25px;
+}
+
+/* ===== Restaurant Card ===== */
+
+.ar-card {
+  background: #fff;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  padding: 18px;
+  margin-bottom: 20px;
+  position: relative;
+
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  transition: 0.3s ease;
+}
+
+.ar-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* ===== Inactive Card ===== */
+
+.ar-card-inactive {
+  opacity: 0.55;
+  filter: grayscale(1);
+  background: #f5f5f5;
+  border: 2px dashed #d6d6d6;
+}
+
+/* ===== Hidden Badge ===== */
+
+.ar-hidden-label {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+
+  background: rgba(0,0,0,0.75);
+  color: white;
+
+  padding: 6px 14px;
+  border-radius: 30px;
+
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+
+  z-index: 2;
+}
+
+/* ===== Image ===== */
+
+.ar-image {
+  width: 220px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin-right: 20px;
+}
+
+
+/* ===== Info Section ===== */
+
+.ar-info {
+  flex: 1;
+}
+
+/* ===== Rating ===== */
+
+.ar-rating {
+    display: flex;
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 8px;
+
+    width: fit-content;
+
+    background: #1aa260;
+
+    color: white;
+
+    padding: 3px 10px;
+
+    border-radius: 6px;
+
+    font-weight: 700;
+
+    font-size: 11px;
+}
+
+/* ===== Restaurant Name ===== */
+
+.ar-name {
+  font-size: 24px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 8px;
+}
+
+/* ===== Phone ===== */
+
+.ar-phone {
+  color: #777;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* ===== Buttons Section ===== */
+
+.ar-actions-btns {
+    margin-top: auto;
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 10px;
+
+    padding-top: 15px;
+}
+
+/* ===== Buttons ===== */
+
+.ar-btn {
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+/* Edit */
+
+.ar-btn-edit {
+  background: #f1f5f9;
+  color: #27ae60;
+  margin-right: 10px;
+}
+.ar-btn-edit:hover {
+    background-color: #e2e8f0;
+}
+
+/* Active */
+
+.ar-btn-active {
+    background: #27ae60;
+
+    color: white;
+}
+
+.ar-btn-active:hover {
+    filter: brightness(1.1);
+
+    transform: scale(1.05);
+}
+
+/* Inactive */
+
+.ar-btn-inactive {
+    background: #f39c12;
+
+    color: white;
+}
+
+.ar-btn-inactive:hover {
+    filter: brightness(1.1);
+
+    transform: scale(1.05);
+}
+
+/* ===== Modal Overlay ===== */
+
+.ar-modal {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0, 0, 0, 0.6);
+
+    backdrop-filter: blur(5px);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+/* ===== Modal Box ===== */
+
+.ar-modal-box {
+    background: white;
+
+    width: 90%;
+    max-width: 500px;
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+
+    position: relative;
+
+    animation: slideUp 0.4s ease-out;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* ===== Modal Title ===== */
+
+.ar-modal-box h3 {
+    color: #1e272e;
+
+    margin-bottom: 15px;
+
+    font-weight: 800;
+
+    border-bottom: 2px solid #1aa260;
+
+    padding-bottom: 10px;
+}
+
+/* ===== Inputs ===== */
+
+.ar-input {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #eee;
+
+    border-radius: 10px;
+
+    background: #f9f9f9;
+
+    outline: none;
+}
+
+.ar-input:focus {
+    border-color: #1aa260;
+}
+
+/* ===== Modal Buttons ===== */
+
+.ar-actions {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 20px;
+}
+
+.ar-save {
+    flex: 2;
+
+    background: #1aa260;
+
+    color: white;
+}
+
+.ar-cancel {
+    flex: 1;
+
+    background: #f1f2f6;
+
+    color: #2d3436;
+}
+/* hide */
+.ar-btn-hide {
+  background: #e67e22;
+  color: white;
+}
+
+/* show */
+.ar-btn-show {
+  background: #27ae60;
+  color: white;
+}
+
+.ar-btn:hover {
+  transform: scale(1.05);
+}

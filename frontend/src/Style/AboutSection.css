@@ -1,0 +1,125 @@
+/* AboutSection.css */
+
+/* هاد الكلاس هو القفل، أي شي جواته ما بيطلع لبرا */
+.about-section {
+    padding: 80px 5%;
+    background-color: #ffffff; /* خلفية بيضاء صافية */
+    overflow: hidden;
+    font-family: 'Inter', sans-serif;
+    display: block; 
+}
+
+/* حصرنا التعديل فقط بالـ container اللي جوا الـ about */
+.about-section .about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 0.5fr;
+    gap: 40px;
+    align-items: center;
+}
+
+/* تنسيق الصور المنحنية - محصورة بالـ about */
+.about-section .about-images-grid {
+    display: flex;
+    gap: 20px;
+    height: 500px;
+}
+
+.about-section .img-rounded-large {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 200px 200px 20px 20px;
+}
+
+.about-section .img-rounded-top {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 150px 150px 20px 150px;
+}
+
+.about-section .img-rounded-bottom {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 20px 150px 150px 150px;
+}
+
+/* نصوص الصفحة - محصورة */
+.about-section .sub-title {
+    color: #4ade80; /* أخضر فاتح */
+    font-weight: 700;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.about-section .main-title {
+    font-size: 2.8rem;
+    color: #0f844f; /* أخضر غامق فخم */
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.about-section .description {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+/* ميزات الرحلة */
+.about-section .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.about-section .feature-icon {
+    background-color: #4ade80;
+    color: white;
+    min-width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* الزر - أهم شي حصرناه عشان ما يخرب أزرار الموقع */
+.about-section .learn-more-btn {
+    background-color: #166534;
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: fit-content;
+}
+
+.about-section .learn-more-btn:hover {
+    background-color: #4ade80;
+    transform: scale(1.05);
+}
+
+.about-section .traveler-image img {
+    width: 100%;
+    max-width: 300px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .about-section .about-container {
+        grid-template-columns: 1fr;
+    }
+    .about-section .traveler-image {
+        display: none;
+    }
+}

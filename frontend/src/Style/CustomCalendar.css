@@ -1,0 +1,62 @@
+/* --- الحاوية الأساسية (صغيرة ومكانها صح) --- */
+.calendar-wrapper {
+  margin-left: 320px;
+  margin-top: -5px;
+  width: 230px; /* رجعنا للحجم الصغير */
+  z-index: 100;
+  color: #000;
+ margin-right: 10px;
+}
+
+/* --- شكل الـ Input ناعم وبسيط --- */
+.custom-range-picker {
+  border-radius: 8px !important;
+  border: 1px solid #d9d9d9 !important;
+  padding: 4px 12px !important;
+ 
+}
+
+/* --- السحر كله هون (Hover & Selection) --- */
+
+/* 1. جعل الأيام دائرية تماماً عند الاختيار */
+.ant-picker-cell-inner {
+  border-radius: 50% !important; /* دائرة مثل الصورة */
+  width: 2px !important;
+  height: 15px !important;
+  line-height: 15px !important;
+  margin: auto !important;
+  font-weight: 400px !important;
+}
+
+/* 2. لون البداية والنهاية (أخضر غامق ودائرة كاملة) */
+.ant-picker-cell-range-start .ant-picker-cell-inner,
+.ant-picker-cell-range-end .ant-picker-cell-inner {
+  background-color: #1aa260 !important;
+  color: white !important;
+}
+
+/* 3. لون المنطقة اللي بالنص (خلفية خضراء فاتحة جداً) */
+/* هيدي اللي بتعطي شكل المستطيل الملون الواصل بين الدائرتين */
+.ant-picker-cell-in-range::before {
+  background-color: #e8f5e9 !important; /* أخضر فاتح جداً مثل الصورة */
+}
+
+/* 4. تأثير الـ Hover (لما تمري بالماوس) */
+.ant-picker-cell:hover:not(.ant-picker-cell-selected) .ant-picker-cell-inner {
+  background-color: #f0fdf4 !important;
+  color: #1aa260 !important;
+}
+
+/* --- تنسيق الأرقام المحجوزة (أحمر) --- */
+.ant-picker-cell-disabled .ant-picker-cell-inner {
+  color: #ff4d4f !important;
+  background-color: transparent !important;
+ 
+  opacity: 0.5;
+}
+
+/* --- إلغاء أي خطوط زرقاء للمتصفح --- */
+.ant-picker-focused {
+  border-color: #1aa260 !important;
+  box-shadow: 0 0 0 2px rgba(26, 162, 96, 0.1) !important;
+}

@@ -1,0 +1,113 @@
+.admin-orders-page {
+  padding: 40px;
+  background: #f8f9fa;
+  min-height: 100vh;
+}
+
+.admin-title {
+  font-size: 28px;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.admin-order-card {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.admin-order-card:hover {
+  transform: translateY(-3px);
+}
+
+.order-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status {
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  text-transform: capitalize;
+}
+
+.status.pending {
+  background: #ffeeba;
+}
+
+.status.preparing {
+  background: #bee5eb;
+}
+
+.status.on-the-way {
+  background: #d4edda;
+}
+
+.status.delivered {
+  background: #c3e6cb;
+}
+
+.order-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 15px;
+  gap: 20px;
+}
+
+.payment-status {
+  color: green;
+  font-weight: bold;
+}
+
+.status-control {
+  margin-top: 15px;
+}
+
+.status-control select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+.items-container {
+  display: flex;
+  gap: 15px;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.item-box {
+  background: #fff;
+  border-radius: 12px;
+  padding: 10px;
+  width: 120px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.item-box:hover {
+  transform: translateY(-5px);
+}
+
+.item-image {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.item-name {
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+.item-price {
+  font-size: 12px;
+  color: #666;
+}

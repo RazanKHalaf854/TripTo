@@ -1,0 +1,444 @@
+/* Scoped CSS to prevent conflicts */
+.booking-page-area {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 40px 20px;
+    color: #333;
+}
+
+/* --- Stepper --- */
+.booking-page-area .stepper-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+}
+
+.booking-page-area .step-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    flex: 1;
+}
+
+.booking-page-area .step-item span {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    z-index: 2;
+    margin-bottom: 8px;
+    color: #666;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.booking-page-area .step-item.active span,
+.booking-page-area .step-item.completed span {
+    background: #28a745; 
+    color: white;
+}
+
+.booking-page-area .step-item p {
+    font-size: 13px;
+    font-weight: 500;
+    color: #666;
+}
+
+.booking-page-area .step-item::after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background: #e0e0e0;
+    width: 100%;
+    top: 17.5px;
+    left: 50%;
+    z-index: 1;
+}
+
+.booking-page-area .step-item:last-child::after { display: none; }
+
+
+.booking-page-area .payment-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* --- Main Card Style --- */
+.booking-page-area .luxury-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    margin-bottom: 20px;
+    overflow: hidden; 
+    display: flow-root; 
+}
+
+.booking-page-area .card-title {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #1a1a1a;
+}
+
+/* --- Form Elements --- */
+.booking-page-area .input-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.booking-page-area .field-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.booking-page-area label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+}
+
+.booking-page-area input, 
+.booking-page-area select, 
+.booking-page-area textarea {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.3s;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.booking-page-area input:focus { border-color: #28a745; box-shadow: 0 0 0 3px rgba(26, 77, 46, 0.1); }
+
+/* --- Pay Options --- */
+.booking-page-area .pay-option {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+    font-weight: 600;
+}
+
+.booking-page-area .pay-option.active {
+    border: 2px solid #28a745;
+    background:#f0fdf4;
+}
+
+/* --- Payment Icons --- */
+.booking-page-area .payment-methods-icons { margin-bottom: 30px; }
+.booking-page-area .icons-row { display: flex; gap: 10px; margin-top: 10px; }
+
+.booking-page-area .method-tag {
+    padding: 5px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.booking-page-area .whish { background: #ff0000; color: white; }
+.booking-page-area .omt { background: #ffd700; color: black; }
+
+/* --- Summary Card (Sticky) --- */
+.booking-page-area .summary-sticky-card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 20px;
+}
+
+.booking-page-area .hotel-brief {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.booking-page-area .hotel-brief img {
+    width: 100px;
+    height: 100px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+
+.booking-page-area .check-box {
+    display: flex;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    justify-content: space-around;
+}
+
+.booking-page-area .check-box div { flex: 1; text-align: center; }
+.booking-page-area .check-box label { display: block; font-size: 11px; color: #777; margin-bottom: 4px; }
+.booking-page-area .check-box span { font-weight: 800; font-size: 14px; color: #333; }
+
+
+.booking-page-area .v-line { 
+    width: 35px; 
+    height: 25px; 
+
+    border-radius: 4px; 
+    margin: 0 10px; 
+}
+
+.booking-page-area .price-list .line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.booking-page-area .price-list .total {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #1a1a1a;
+    font-weight: 800;
+}
+
+/* --- Buttons --- */
+.booking-page-area .next-btn, .booking-page-area .confirm-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    float: right;
+    transition: 0.3s;
+    margin-top: 10px;
+}
+
+.booking-page-area .next-btn:hover, .booking-page-area .confirm-btn:hover {
+    background: #28a745;
+    transform: translateY(-2px);
+}
+
+.booking-page-area .back-link {
+    background: none;
+    border: none;
+    color: #666;
+    text-decoration: underline;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.booking-page-area .btn-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+}
+
+
+
+.booking-page-area .fade-in {
+    animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.booking-page-area .save-card {
+    display: flex;
+    align-items: center; 
+    gap: 10px; 
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+
+.booking-page-area .save-card input[type="checkbox"] {
+    width: auto; 
+    cursor: pointer;
+}
+
+.booking-page-area .save-card label {
+    margin-bottom: 0;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: #28a745; 
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+    background-color: #28a745;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+
+.btn-disabled {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: not-allowed; 
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.8;
+    transition: background 0.5s ease;
+}
+
+
+button:disabled {
+    pointer-events: none;
+}
+.payment-options-container {
+    margin-bottom: 25px;
+}
+
+.pay-opt {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+    gap: 15px;
+}
+
+.pay-opt.active {
+    border-color: #4c4f50;
+    background-color: #f4f6f5;
+}
+
+.pay-opt strong {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.pay-opt p {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+}
+
+.due-now {
+    background: #f0f3f2;
+    padding: 8px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+/* علبة خيارات الدفع (كامل أو نص) */
+.payment-options-box {
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* العنصر الواحد (الخيار) */
+.option-item {
+    display: flex;
+    align-items: center;
+    padding: 18px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #ffffff;
+}
+
+/* لما يكون الخيار مختار (Active) */
+.option-item.selected {
+    border-color: #4c4f50; /* لونك المخصص */
+    background-color: #f4f6f5; /* خلفية خفيفة جداً لتبرز الخيار */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+/* شكل الـ Radio Button */
+.option-item input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 15px;
+    accent-color: #4c4f50; /* تلوين الـ radio بنفس لون مشروعك */
+    cursor: pointer;
+}
+
+/* النصوص داخل الخيار */
+.option-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.option-text strong {
+    font-size: 1.05rem;
+    color: #333;
+    font-weight: 600;
+}
+
+.option-text span {
+    font-size: 0.85rem;
+    color: #666;
+}
+
+/* تعديل الـ Summary ليظهر المبلغ المطلوب دفعه الآن */
+.line.due-now {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed #ccc;
+    color: #4c4f50;
+    font-weight: bold;
+}
+
+/* انيميشن بسيطة عند الاختيار */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}

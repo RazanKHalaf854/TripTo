@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    background-color: #fcfcfc;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+.activity-page {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+/* Header Styles */
+.activity-header .subtitle, .popular-section .subtitle {
+    color: #6c757d;
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.activity-header .title, .popular-section .title {
+    color: #219150; /* لون أخضر غامق فخم */
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+}
+
+/* --- Section 1: Categories --- */
+.categories-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    margin-bottom: 30px;
+}
+
+.category-card-wrapper {
+    width: 200px;
+    transition: transform 0.4s ease;
+    animation: fadeInUp 0.8s ease backwards;
+}
+
+/* توزيع حركات الدخول */
+.category-card-wrapper:nth-child(1) { animation-delay: 0.1s; }
+.category-card-wrapper:nth-child(2) { animation-delay: 0.2s; }
+.category-card-wrapper:nth-child(3) { animation-delay: 0.3s; }
+.category-card-wrapper:nth-child(4) { animation-delay: 0.4s; }
+.category-card-wrapper:nth-child(5) { animation-delay: 0.5s; }
+
+.category-card-inner {
+    border-radius: 25px;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: all 0.4s ease;
+    cursor: pointer;
+}
+
+.category-card-inner img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 25px;
+    transition: transform 0.5s ease;
+}
+
+.category-label {
+    padding: 15px 10px;
+}
+
+.category-label h3 {
+    font-size: 1.1rem;
+    color: #219150;
+    margin: 0;
+}
+
+.category-label span {
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Hover Effects for Categories */
+.category-card-wrapper:hover {
+    transform: translateY(-15px) rotateY(5deg);
+}
+
+.category-card-wrapper:hover img {
+    transform: scale(1.1);
+}
+
+/* Dots */
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 80px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ccc;
+    transition: 0.3s;
+}
+
+.dot.active {
+    background: #219150;
+    width: 20px;
+    border-radius: 10px;
+}
+
+/* --- Popular Destination Section --- */
+.popular-section {
+    padding: 80px 0;
+    background-color: #fcfcfc; /* خلفية فاتحة نظيفة */
+    text-align: center;
+}
+
+.popular-section .subtitle {
+    color: #888;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.popular-section .title {
+    color: #219150; /* اللون الأخضر الفخم */
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 70px; /* مسافة إضافية للكومة */
+}
+
+/* حاوية الكروت - هي السر */
+.popular-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* محاذاة عمودية للمنتصف */
+    position: relative;
+    height: 500px; /* ارتفاع كافٍ للسكشن */
+    /* هذا لمنع التداخل من الخروج عن الحاوية */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* التصميم الأساسي لكل كرت */
+.popular-card {
+    position: relative;
+    width: 200px; /* عرض الكروت الجانبية (أعرض قليلاً لتداخل أفضل) */
+    height: 380px; /* ارتفاع الكروت الجانبية */
+    border-radius: 30px; /* زوايا دائرية فخمة */
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1); /* حركة ناعمة جداً */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); /* ظل خفيف */
+    
+    /* جعل الكروت تتداخل (margin سالب جانبي) */
+    margin: 0 -40px; 
+}
+
+/* --- التحكم بالطبقات (Z-index) لجعل الأوسط هو البارز --- */
+
+/* الكروت على اليسار (1، 2) */
+.popular-card:nth-child(1) { z-index: 1; transform: rotate(-5deg); } /* ميلان خفيف */
+.popular-card:nth-child(2) { z-index: 2; transform: rotate(-2deg); }
+
+/* الكرت الأوسط (رقم 3) */
+.popular-card:nth-child(3) {
+    width: 350px; /* الأوسط هو الأعرض */
+    height: 480px; /* الأوسط هو الأطول */
+    z-index: 5; /* فوق الجميع */
+    margin: 0 -50px; /* تداخل أكبر للأوسط */
+    transform: rotate(0deg); /* مستقيم */
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2); /* ظل أقوى */
+}
+
+/* الكروت على اليمين (4، 5) */
+.popular-card:nth-child(4) { z-index: 2; transform: rotate(2deg); }
+.popular-card:nth-child(5) { z-index: 1; transform: rotate(5deg); }
+
+
+/* --- الأنميشن والحركات (Animations) --- */
+
+/* حركة عند وضع الماوس (Hover) لبروز أي كرت */
+.popular-card:hover {
+    width: 350px !important; /* يتمدد ليصبح بعرض الأوسط */
+    height: 480px !important; /* يتمدد ليصبح بطول الأوسط */
+    z-index: 10 !important; /* يرتفع فوق كل شيء، حتى الأوسط */
+    transform: rotate(0deg) translateY(-15px) !important; /* يصبح مستقيماً ويرتفع للأعلى */
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3) !important;
+    margin: 0 -20px !important; /* تقليل التداخل أثناء الـ Hover لبروز الكرت */
+}
+
+/* الصور داخل الكروت */
+.popular-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.popular-card:hover img {
+    transform: scale(1.05); /* تكبير خفيف جداً للصورة */
+}
+
+/* --- تفاصيل الكرت (الاسم والزر) --- */
+.popular-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%; /* مساحة أكبر للتدرج */
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding: 30px;
+    box-sizing: border-box;
+    opacity: 0; /* مخفية */
+    transition: opacity 0.5s ease;
+}
+
+/* إظهار التفاصيل للأوسط تلقائياً ولأي كرت عند الـ Hover */
+.popular-card:nth-child(3) .popular-overlay,
+.popular-card:hover .popular-overlay {
+    opacity: 1;
+}
+
+.popular-overlay h3 {
+    color: #fff;
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+}
+
+.popular-overlay p {
+    color: #ccc;
+    font-size: 0.9rem;
+    margin: 5px 0 15px 0;
+}
+
+/* زر "View All" بلمسة Glassmorphism */
+.popular-overlay button {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    cursor: pointer;
+    backdrop-filter: blur(8px); /* تأثير الضبابية خلف الزر */
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.popular-overlay button:hover {
+    background: #fff;
+    color: #219150;
+    transform: scale(1.05);
+}
+
+/* أنميشن الدخول عند تحميل الصفحة */
+@keyframes stackedEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(50px) rotateX(10deg);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) rotateX(0deg);
+    }
+}
+
+.popular-card {
+    animation: stackedEntrance 1s ease backwards;
+}
+
+/* تأخير الدخول لتبدو وكأنها تُفرد بالتتالي */
+.popular-card:nth-child(1) { animation-delay: 0.1s; }
+.popular-card:nth-child(2) { animation-delay: 0.2s; }
+.popular-card:nth-child(3) { animation-delay: 0.3s; }
+.popular-card:nth-child(4) { animation-delay: 0.4s; }
+.popular-card:nth-child(5) { animation-delay: 0.5s; }
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc; /* لون النقاط غير النشطة */
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* أنميشن السحب */
+}
+
+.dot.active {
+    background-color: #2d6a4f; /* لون النقطة النشطة */
+    width: 25px; /* بتطول شوي لما تصير active مثل الصورة */
+    border-radius: 10px;
+}
+
+.dot:hover {
+    background-color: #a3b18a;
+}

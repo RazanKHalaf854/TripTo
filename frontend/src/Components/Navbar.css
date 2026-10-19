@@ -1,0 +1,191 @@
+/* --- Navbar الأساسي --- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 40px;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo-image {
+  height: 40px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+/* --- أزرار التحكم --- */
+.nav-actions {
+  display: flex;
+  align-items: center;
+}
+
+.login-btn {
+  background: linear-gradient(135deg, #4CAF50, #2e7d32);
+  color: white;
+  border: none;
+  padding: 8px 25px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* --- Profile Trigger --- */
+.user-menu-container {
+  position: relative;
+}
+
+.user-profile-trigger {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  padding: 5px 15px;
+  border-radius: 30px;
+  transition: 0.3s;
+  background: rgba(0,0,0,0.02);
+}
+
+.user-profile-trigger:hover {
+  background: rgba(0,0,0,0.06);
+}
+
+.user-avatar-initials {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%; /* لجعلها دائرية كما طلبتِ سابقاً */
+  background: linear-gradient(135deg, #1aa260, #1aa260);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.nav-username {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 14px;
+}
+
+/* --- Dropdown Sidebar (Right Side) --- */
+.dropdown-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 280px;
+  height: 100vh;
+  background: white;
+  box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  z-index: 1100;
+  font-family: inherit;
+  
+  /* التحكم بالظهور عبر الـ State */
+  transform: translateX(100%); 
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* الحالة النشطة عند الـ State = true */
+.dropdown-menu.active {
+  transform: translateX(0);
+}
+
+/* Header داخل المنيو */
+.user-header {
+  padding: 30px 25px 20px;
+  background: #f9fbf9;
+  border-bottom: 1px solid #eee;
+}
+
+.user-header strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.user-header p {
+  font-size: 0.85rem;
+  color: #7f8c8d;
+}
+
+/* القائمة */
+.dropdown-menu ul {
+  list-style: none;
+  padding: 15px 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.dropdown-menu li {
+  transition: 0.2s;
+}
+
+.menu-link {
+  padding: 12px 25px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: #4a4a4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+  width: 100%;
+}
+
+.dropdown-menu li:hover {
+  background-color: #f1f8f1;
+}
+
+.dropdown-menu li:hover .menu-link {
+  color: #1aa260;
+}
+
+.dropdown-menu svg {
+  font-size: 1.1rem;
+  color: #888;
+  transition: 0.3s;
+}
+
+.dropdown-menu li:hover svg {
+  color: #1aa260;
+}
+
+/* الخط الفاصل */
+hr {
+  border: 0;
+  border-top: 1px solid #f0f0f0;
+  margin: 10px 25px;
+}
+
+/* تسجيل الخروج في الأسفل */
+.logout-item {
+  margin-top: auto;
+  padding: 20px 25px 40px;
+  color: #d9534f;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  border-top: 1px solid #eee;
+  font-weight: 600;
+}
+
+.logout-item:hover {
+  background-color: #fff5f5;
+  color: #c9302c;
+}

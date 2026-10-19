@@ -1,0 +1,372 @@
+[33mcommit 0dca5c8e54efaa68017fa14645ad33b5ecfed29d[m
+Author: mayarifai25-afk <Mayarifai25@gmail.com>
+Date:   Tue May 26 01:31:20 2026 -0700
+
+    first commit
+
+ .gitignore                                       |     1 [32m+[m
+ backend/.env                                     |     1 [32m+[m
+ backend/Server.js                                |  1240 [32m++[m
+ backend/package-lock.json                        |  1242 [32m++[m
+ backend/package.json                             |    24 [32m+[m
+ frontend/.gitignore                              |    23 [32m+[m
+ frontend/README.md                               |    70 [32m+[m
+ frontend/package-lock.json                       | 16332 [32m+++++++++++++++++++++[m
+ frontend/package.json                            |    59 [32m+[m
+ frontend/public/Reviews/img1.jpg                 |   Bin [31m0[m -> [32m187664[m bytes
+ frontend/public/activity/1.jpg                   |   Bin [31m0[m -> [32m389293[m bytes
+ frontend/public/activity/2.jpg                   |   Bin [31m0[m -> [32m167822[m bytes
+ frontend/public/activity/attraction.jpg          |   Bin [31m0[m -> [32m180364[m bytes
+ frontend/public/activity/atv.jpg                 |   Bin [31m0[m -> [32m182588[m bytes
+ frontend/public/activity/game1.jpg               |   Bin [31m0[m -> [32m76174[m bytes
+ frontend/public/activity/game2.jpg               |   Bin [31m0[m -> [32m66658[m bytes
+ frontend/public/activity/game3.jpg               |   Bin [31m0[m -> [32m85242[m bytes
+ frontend/public/activity/game4.jpg               |   Bin [31m0[m -> [32m263674[m bytes
+ frontend/public/activity/game5.jpg               |   Bin [31m0[m -> [32m236685[m bytes
+ frontend/public/activity/game6.jpg               |   Bin [31m0[m -> [32m214207[m bytes
+ frontend/public/activity/hiking.jpg              |   Bin [31m0[m -> [32m309674[m bytes
+ frontend/public/activity/horse.jpg               |   Bin [31m0[m -> [32m195306[m bytes
+ frontend/public/activity/je.jpg                  |   Bin [31m0[m -> [32m111628[m bytes
+ frontend/public/activity/traveler.png            |   Bin [31m0[m -> [32m180277[m bytes
+ frontend/public/favicon.ico                      |   Bin [31m0[m -> [32m3870[m bytes
+ frontend/public/image/Home.jpeg                  |   Bin [31m0[m -> [32m356995[m bytes
+ frontend/public/image/breeze1.jpg                |   Bin [31m0[m -> [32m139449[m bytes
+ frontend/public/image/breeze2.jpg                |   Bin [31m0[m -> [32m33831[m bytes
+ frontend/public/image/breeze3.jpg                |   Bin [31m0[m -> [32m36669[m bytes
+ frontend/public/image/breeze4.jpg                |   Bin [31m0[m -> [32m241461[m bytes
+ frontend/public/image/breeze5.jpg                |   Bin [31m0[m -> [32m109359[m bytes
+ frontend/public/image/broom1.jpg                 |   Bin [31m0[m -> [32m147973[m bytes
+ frontend/public/image/broom2.jpg                 |   Bin [31m0[m -> [32m187664[m bytes
+ frontend/public/image/cave1.jpg                  |   Bin [31m0[m -> [32m64723[m bytes
+ frontend/public/image/cave2.jpg                  |   Bin [31m0[m -> [32m157513[m bytes
+ frontend/public/image/cave3.jpg                  |   Bin [31m0[m -> [32m80134[m bytes
+ frontend/public/image/cave4.jpg                  |   Bin [31m0[m -> [32m93619[m bytes
+ frontend/public/image/ced1.jpg                   |   Bin [31m0[m -> [32m172865[m bytes
+ frontend/public/image/ced2.jpg                   |   Bin [31m0[m -> [32m196141[m bytes
+ frontend/public/image/ced3.jpg                   |   Bin [31m0[m -> [32m208915[m bytes
+ frontend/public/image/ced4.jpg                   |   Bin [31m0[m -> [32m247158[m bytes
+ frontend/public/image/fir1.jpg                   |   Bin [31m0[m -> [32m129158[m bytes
+ frontend/public/image/fir2.jpg                   |   Bin [31m0[m -> [32m224913[m bytes
+ frontend/public/image/fir3.jpg                   |   Bin [31m0[m -> [32m183854[m bytes
+ frontend/public/image/fir4.jpg                   |   Bin [31m0[m -> [32m166852[m bytes
+ frontend/public/image/green1.jpg                 |   Bin [31m0[m -> [32m189694[m bytes
+ frontend/public/image/green2.jpg                 |   Bin [31m0[m -> [32m252943[m bytes
+ frontend/public/image/green3.jpg                 |   Bin [31m0[m -> [32m186109[m bytes
+ frontend/public/image/green4.jpg                 |   Bin [31m0[m -> [32m247727[m bytes
+ frontend/public/image/host1.jpg                  |   Bin [31m0[m -> [32m126119[m bytes
+ frontend/public/image/host2.jpg                  |   Bin [31m0[m -> [32m210948[m bytes
+ frontend/public/image/host3.jpg                  |   Bin [31m0[m -> [32m193860[m bytes
+ frontend/public/image/host4.jpg                  |   Bin [31m0[m -> [32m159584[m bytes
+ frontend/public/image/img1.jpg                   |   Bin [31m0[m -> [32m200724[m bytes
+ frontend/public/image/img10.jpg                  |   Bin [31m0[m -> [32m247722[m bytes
+ frontend/public/image/img11.jpg                  |   Bin [31m0[m -> [32m156326[m bytes
+ frontend/public/image/img2.jpg                   |   Bin [31m0[m -> [32m187365[m bytes
+ frontend/public/image/img3.jpg                   |   Bin [31m0[m -> [32m163971[m bytes
+ frontend/public/image/img4.jpg                   |   Bin [31m0[m -> [32m232630[m bytes
+ frontend/public/image/img5.jpg                   |   Bin [31m0[m -> [32m109491[m bytes
+ frontend/public/image/img6.jpg                   |   Bin [31m0[m -> [32m142902[m bytes
+ frontend/public/image/img7.jpg                   |   Bin [31m0[m -> [32m123989[m bytes
+ frontend/public/image/img8.jpg                   |   Bin [31m0[m -> [32m127391[m bytes
+ frontend/public/image/img9.jpg                   |   Bin [31m0[m -> [32m297759[m bytes
+ frontend/public/image/nat1.jpg                   |   Bin [31m0[m -> [32m96832[m bytes
+ frontend/public/image/nat2.jpg                   |   Bin [31m0[m -> [32m67558[m bytes
+ frontend/public/image/nat3.jpg                   |   Bin [31m0[m -> [32m162051[m bytes
+ frontend/public/image/nat4.jpg                   |   Bin [31m0[m -> [32m115244[m bytes
+ frontend/public/image/oven1.jpg                  |   Bin [31m0[m -> [32m99262[m bytes
+ frontend/public/image/oven2.jpg                  |   Bin [31m0[m -> [32m235618[m bytes
+ frontend/public/image/oven3.jpg                  |   Bin [31m0[m -> [32m67094[m bytes
+ frontend/public/image/oven4.jpg                  |   Bin [31m0[m -> [32m140971[m bytes
+ frontend/public/image/sama1.jpg                  |   Bin [31m0[m -> [32m118981[m bytes
+ frontend/public/image/sama2.jpg                  |   Bin [31m0[m -> [32m211450[m bytes
+ frontend/public/image/sama3.jpg                  |   Bin [31m0[m -> [32m272419[m bytes
+ frontend/public/image/sama4.jpg                  |   Bin [31m0[m -> [32m110214[m bytes
+ frontend/public/image/sous1.jpg                  |   Bin [31m0[m -> [32m333958[m bytes
+ frontend/public/image/sous2.jpg                  |   Bin [31m0[m -> [32m127492[m bytes
+ frontend/public/image/sous3.jpg                  |   Bin [31m0[m -> [32m246383[m bytes
+ frontend/public/image/sous4.jpg                  |   Bin [31m0[m -> [32m160098[m bytes
+ frontend/public/image/star1.jpg                  |   Bin [31m0[m -> [32m101357[m bytes
+ frontend/public/image/star2.jpg                  |   Bin [31m0[m -> [32m256071[m bytes
+ frontend/public/image/star3.jpg                  |   Bin [31m0[m -> [32m236488[m bytes
+ frontend/public/image/star4.jpg                  |   Bin [31m0[m -> [32m177919[m bytes
+ frontend/public/images/Home.jpeg                 |   Bin [31m0[m -> [32m356995[m bytes
+ frontend/public/images/Meals mountain house.jpeg |   Bin [31m0[m -> [32m187884[m bytes
+ frontend/public/images/Meals mountain.jpeg       |   Bin [31m0[m -> [32m162189[m bytes
+ frontend/public/images/Meals mountain3.jpeg      |   Bin [31m0[m -> [32m257538[m bytes
+ frontend/public/images/Meals mountain4.jpeg      |   Bin [31m0[m -> [32m257463[m bytes
+ frontend/public/images/Meals1 monto.jpeg         |   Bin [31m0[m -> [32m114983[m bytes
+ frontend/public/images/Meals2 monto.jpeg         |   Bin [31m0[m -> [32m201588[m bytes
+ frontend/public/images/Meals3.jpeg               |   Bin [31m0[m -> [32m151697[m bytes
+ frontend/public/images/Meals4 monto.jpeg         |   Bin [31m0[m -> [32m260741[m bytes
+ frontend/public/images/Shishbarak.jpeg           |   Bin [31m0[m -> [32m79688[m bytes
+ frontend/public/images/Tawouk.jpeg               |   Bin [31m0[m -> [32m224938[m bytes
+ frontend/public/images/arz.jpeg                  |   Bin [31m0[m -> [32m223918[m bytes
+ frontend/public/images/arz1.jpeg                 |   Bin [31m0[m -> [32m200134[m bytes
+ frontend/public/images/arz2.jpeg                 |   Bin [31m0[m -> [32m225342[m bytes
+ frontend/public/images/arz3.jpeg                 |   Bin [31m0[m -> [32m226666[m bytes
+ frontend/public/images/arz4.jpeg                 |   Bin [31m0[m -> [32m233357[m bytes
+ frontend/public/images/barbicu.jpeg              |   Bin [31m0[m -> [32m83493[m bytes
+ frontend/public/images/baverage tree house.jpeg  |   Bin [31m0[m -> [32m57553[m bytes
+ frontend/public/images/blueberrie.jpeg           |   Bin [31m0[m -> [32m36788[m bytes
+ frontend/public/images/break mountain.jpeg       |   Bin [31m0[m -> [32m188583[m bytes
+ frontend/public/images/break mountain2.jpeg      |   Bin [31m0[m -> [32m266865[m bytes
+ frontend/public/images/break tree.jpeg           |   Bin [31m0[m -> [32m232843[m bytes
+ frontend/public/images/break tree2.jpeg          |   Bin [31m0[m -> [32m220285[m bytes
+ frontend/public/images/break tree4.jpeg          |   Bin [31m0[m -> [32m210679[m bytes
+ frontend/public/images/breakk tree3.jpeg         |   Bin [31m0[m -> [32m252395[m bytes
+ frontend/public/images/burger.jpeg               |   Bin [31m0[m -> [32m49259[m bytes
+ frontend/public/images/caramel.jpeg              |   Bin [31m0[m -> [32m136176[m bytes
+ frontend/public/images/chickenmashrom.jpeg       |   Bin [31m0[m -> [32m69874[m bytes
+ frontend/public/images/chiken.jpeg               |   Bin [31m0[m -> [32m153629[m bytes
+ frontend/public/images/chocklot.jpeg             |   Bin [31m0[m -> [32m125008[m bytes
+ frontend/public/images/coffee monto.jpeg         |   Bin [31m0[m -> [32m113614[m bytes
+ frontend/public/images/coffee.jpeg               |   Bin [31m0[m -> [32m102546[m bytes
+ frontend/public/images/cokies.jpeg               |   Bin [31m0[m -> [32m33668[m bytes
+ frontend/public/images/cover koukh.jpeg          |   Bin [31m0[m -> [32m179958[m bytes
+ frontend/public/images/cover monto.jpeg          |   Bin [31m0[m -> [32m274185[m bytes
+ frontend/public/images/cover nasmi.jpeg          |   Bin [31m0[m -> [32m237166[m bytes
+ frontend/public/images/cover shouh.jpeg          |   Bin [31m0[m -> [32m234060[m bytes
+ frontend/public/images/cover tree.jpeg           |   Bin [31m0[m -> [32m228366[m bytes
+ frontend/public/images/cover2shouh.jpeg          |   Bin [31m0[m -> [32m267602[m bytes
+ frontend/public/images/cover_8abat.jpeg          |   Bin [31m0[m -> [32m259962[m bytes
+ frontend/public/images/cremmy.jpeg               |   Bin [31m0[m -> [32m58595[m bytes
+ frontend/public/images/crepe.jpeg                |   Bin [31m0[m -> [32m31861[m bytes
+ frontend/public/images/cupcake.jpeg              |   Bin [31m0[m -> [32m168310[m bytes
+ frontend/public/images/dessert.jpeg              |   Bin [31m0[m -> [32m116411[m bytes
+ frontend/public/images/desserts.jpeg             |   Bin [31m0[m -> [32m116411[m bytes
+ frontend/public/images/drink monto.jpeg          |   Bin [31m0[m -> [32m90086[m bytes
+ frontend/public/images/fatoush.jpeg              |   Bin [31m0[m -> [32m90530[m bytes
+ frontend/public/images/fettutchini.jpeg          |   Bin [31m0[m -> [32m114399[m bytes
+ frontend/public/images/fries.jpeg                |   Bin [31m0[m -> [32m188337[m bytes
+ frontend/public/images/fries1.jpeg               |   Bin [31m0[m -> [32m49955[m bytes
+ frontend/public/images/grispy.jpeg               |   Bin [31m0[m -> [32m54298[m bytes
+ frontend/public/images/haloumisalad.jpeg         |   Bin [31m0[m -> [32m64464[m bytes
+ frontend/public/images/hotshockolate.jpeg        |   Bin [31m0[m -> [32m101956[m bytes
+ frontend/public/images/jabal.jpeg                |   Bin [31m0[m -> [32m197139[m bytes
+ frontend/public/images/kabab.jpeg                |   Bin [31m0[m -> [32m39728[m bytes
+ frontend/public/images/kbieh.jpeg                |   Bin [31m0[m -> [32m119427[m bytes
+ frontend/public/images/kfta.jpeg                 |   Bin [31m0[m -> [32m333234[m bytes
+ frontend/public/images/koukh1.jpeg               |   Bin [31m0[m -> [32m209255[m bytes
+ frontend/public/images/koukh2.jpeg               |   Bin [31m0[m -> [32m120783[m bytes
+ frontend/public/images/koukh3.jpeg               |   Bin [31m0[m -> [32m172306[m bytes
+ frontend/public/images/kousablaban.jpeg          |   Bin [31m0[m -> [32m62931[m bytes
+ frontend/public/images/kunefe.jpeg               |   Bin [31m0[m -> [32m45250[m bytes
+ frontend/public/images/lotus.jpeg                |   Bin [31m0[m -> [32m179518[m bytes
+ frontend/public/images/lotusmilshake.jpeg        |   Bin [31m0[m -> [32m155468[m bytes
+ frontend/public/images/mangomilkshake.jpeg       |   Bin [31m0[m -> [32m74908[m bytes
+ frontend/public/images/map.jpeg                  |   Bin [31m0[m -> [32m144227[m bytes
+ frontend/public/images/matshamilshake.jpeg       |   Bin [31m0[m -> [32m22288[m bytes
+ frontend/public/images/meals mountain5.jpeg      |   Bin [31m0[m -> [32m248769[m bytes
+ frontend/public/images/monto1.jpeg               |   Bin [31m0[m -> [32m203170[m bytes
+ frontend/public/images/monto2.jpeg               |   Bin [31m0[m -> [32m129565[m bytes
+ frontend/public/images/monto3.jpeg               |   Bin [31m0[m -> [32m217574[m bytes
+ frontend/public/images/monto4.jpeg               |   Bin [31m0[m -> [32m159558[m bytes
+ frontend/public/images/motel.jpeg                |   Bin [31m0[m -> [32m223409[m bytes
+ frontend/public/images/mountain1.jpeg            |   Bin [31m0[m -> [32m254068[m bytes
+ frontend/public/images/mountain2.jpeg            |   Bin [31m0[m -> [32m234882[m bytes
+ frontend/public/images/mountain3.jpeg            |   Bin [31m0[m -> [32m275369[m bytes
+ frontend/public/images/nasma1.jpeg               |   Bin [31m0[m -> [32m262844[m bytes
+ frontend/public/images/nasma2.jpeg               |   Bin [31m0[m -> [32m298211[m bytes
+ frontend/public/images/nasma3.jpeg               |   Bin [31m0[m -> [32m206119[m bytes
+ frontend/public/images/nasma4.jpeg               |   Bin [31m0[m -> [32m243693[m bytes
+ frontend/public/images/nasmt hawa.jpeg           |   Bin [31m0[m -> [32m198279[m bytes
+ frontend/public/images/orio.jpeg                 |   Bin [31m0[m -> [32m88245[m bytes
+ frontend/public/images/oriomilshake.jpeg         |   Bin [31m0[m -> [32m102927[m bytes
+ frontend/public/images/pepsi.jpeg                |   Bin [31m0[m -> [32m16715[m bytes
+ frontend/public/images/pistachio.jpeg            |   Bin [31m0[m -> [32m122685[m bytes
+ frontend/public/images/s.jpeg                    |   Bin [31m0[m -> [32m291115[m bytes
+ frontend/public/images/sahlab.jpeg               |   Bin [31m0[m -> [32m132505[m bytes
+ frontend/public/images/sambousi monto.jpeg       |   Bin [31m0[m -> [32m255405[m bytes
+ frontend/public/images/sevenup.jpeg              |   Bin [31m0[m -> [32m14358[m bytes
+ frontend/public/images/silamon.jpeg              |   Bin [31m0[m -> [32m47027[m bytes
+ frontend/public/images/smoothie monto.jpeg       |   Bin [31m0[m -> [32m160348[m bytes
+ frontend/public/images/smoothie2 monto.jpeg      |   Bin [31m0[m -> [32m129461[m bytes
+ frontend/public/images/smoothie3 monto.jpeg      |   Bin [31m0[m -> [32m75906[m bytes
+ frontend/public/images/smoothie4 monto.jpeg      |   Bin [31m0[m -> [32m86733[m bytes
+ frontend/public/images/smoothie4.jpeg            |   Bin [31m0[m -> [32m88394[m bytes
+ frontend/public/images/spagetii.jpeg             |   Bin [31m0[m -> [32m148362[m bytes
+ frontend/public/images/str.jpeg                  |   Bin [31m0[m -> [32m62080[m bytes
+ frontend/public/images/strwmilkshake.jpeg        |   Bin [31m0[m -> [32m111663[m bytes
+ frontend/public/images/tabouli.jpeg              |   Bin [31m0[m -> [32m297305[m bytes
+ frontend/public/images/tabouli1.jpeg             |   Bin [31m0[m -> [32m76929[m bytes
+ frontend/public/images/tanur&koukh.jpeg          |   Bin [31m0[m -> [32m257143[m bytes
+ frontend/public/images/tawouk1.jpeg              |   Bin [31m0[m -> [32m85618[m bytes
+ frontend/public/images/tiger.jpeg                |   Bin [31m0[m -> [32m272230[m bytes
+ frontend/public/images/tiger1.jpeg               |   Bin [31m0[m -> [32m172566[m bytes
+ frontend/public/images/tiger2.jpeg               |   Bin [31m0[m -> [32m177226[m bytes
+ frontend/public/images/tiger3.jpeg               |   Bin [31m0[m -> [32m140748[m bytes
+ frontend/public/images/tiger4.jpeg               |   Bin [31m0[m -> [32m137393[m bytes
+ frontend/public/images/tree1.jpeg                |   Bin [31m0[m -> [32m254755[m bytes
+ frontend/public/images/tree2.jpeg                |   Bin [31m0[m -> [32m268520[m bytes
+ frontend/public/images/tree3.jpeg                |   Bin [31m0[m -> [32m224088[m bytes
+ frontend/public/images/treehouse.jpeg            |   Bin [31m0[m -> [32m228366[m bytes
+ frontend/public/images/vanilla.jpeg              |   Bin [31m0[m -> [32m164445[m bytes
+ frontend/public/images/waffle.jpeg               |   Bin [31m0[m -> [32m143575[m bytes
+ frontend/public/images/wark3nb.jpeg              |   Bin [31m0[m -> [32m57636[m bytes
+ frontend/public/index.html                       |    44 [32m+[m
+ frontend/public/logo.png                         |   Bin [31m0[m -> [32m11083[m bytes
+ frontend/public/manifest.json                    |    25 [32m+[m
+ frontend/public/robots.txt                       |     3 [32m+[m
+ frontend/public/room/b1.jpg                      |   Bin [31m0[m -> [32m147973[m bytes
+ frontend/public/room/b10.jpg                     |   Bin [31m0[m -> [32m109264[m bytes
+ frontend/public/room/b11.jpg                     |   Bin [31m0[m -> [32m109891[m bytes
+ frontend/public/room/b2.jpg                      |   Bin [31m0[m -> [32m187664[m bytes
+ frontend/public/room/b3.jpg                      |   Bin [31m0[m -> [32m172139[m bytes
+ frontend/public/room/b4.jpg                      |   Bin [31m0[m -> [32m166884[m bytes
+ frontend/public/room/b5.jpg                      |   Bin [31m0[m -> [32m135039[m bytes
+ frontend/public/room/b6.jpg                      |   Bin [31m0[m -> [32m171396[m bytes
+ frontend/public/room/b7.jpg                      |   Bin [31m0[m -> [32m158398[m bytes
+ frontend/public/room/b8.jpg                      |   Bin [31m0[m -> [32m162893[m bytes
+ frontend/public/room/b9.jpg                      |   Bin [31m0[m -> [32m123432[m bytes
+ frontend/public/room/c1.jpg                      |   Bin [31m0[m -> [32m156073[m bytes
+ frontend/public/room/c2.jpg                      |   Bin [31m0[m -> [32m136698[m bytes
+ frontend/public/room/c3.jpg                      |   Bin [31m0[m -> [32m121812[m bytes
+ frontend/public/room/c4.jpg                      |   Bin [31m0[m -> [32m134648[m bytes
+ frontend/public/room/c5.jpg                      |   Bin [31m0[m -> [32m128951[m bytes
+ frontend/public/room/ce1.jpg                     |   Bin [31m0[m -> [32m70872[m bytes
+ frontend/public/room/ce2.jpg                     |   Bin [31m0[m -> [32m64337[m bytes
+ frontend/public/room/ce3.jpg                     |   Bin [31m0[m -> [32m111696[m bytes
+ frontend/public/room/ce4.jpg                     |   Bin [31m0[m -> [32m79485[m bytes
+ frontend/public/room/ce5.jpg                     |   Bin [31m0[m -> [32m74938[m bytes
+ frontend/public/room/ce6.jpg                     |   Bin [31m0[m -> [32m75149[m bytes
+ frontend/public/room/ce7.jpg                     |   Bin [31m0[m -> [32m198422[m bytes
+ frontend/public/room/ce8.jpg                     |   Bin [31m0[m -> [32m191596[m bytes
+ frontend/public/room/ce9.jpg                     |   Bin [31m0[m -> [32m165936[m bytes
+ frontend/public/room/ch1.jpg                     |   Bin [31m0[m -> [32m419575[m bytes
+ frontend/public/room/ch2.jpg                     |   Bin [31m0[m -> [32m377488[m bytes
+ frontend/public/room/ch3.jpg                     |   Bin [31m0[m -> [32m611319[m bytes
+ frontend/public/room/ch4.jpg                     |   Bin [31m0[m -> [32m493415[m bytes
+ frontend/public/room/ch5.jpg                     |   Bin [31m0[m -> [32m480974[m bytes
+ frontend/public/room/ch6.jpg                     |   Bin [31m0[m -> [32m489176[m bytes
+ frontend/public/room/ch7.jpg                     |   Bin [31m0[m -> [32m310769[m bytes
+ frontend/public/room/g1.jpg                      |   Bin [31m0[m -> [32m186000[m bytes
+ frontend/public/room/g2.jpg                      |   Bin [31m0[m -> [32m172983[m bytes
+ frontend/public/room/g3.jpg                      |   Bin [31m0[m -> [32m184143[m bytes
+ frontend/public/room/g4.jpg                      |   Bin [31m0[m -> [32m163189[m bytes
+ frontend/public/room/g5.jpg                      |   Bin [31m0[m -> [32m164175[m bytes
+ frontend/public/room/g6.jpg                      |   Bin [31m0[m -> [32m107153[m bytes
+ frontend/public/room/h1.jpg                      |   Bin [31m0[m -> [32m177223[m bytes
+ frontend/public/room/h2.jpg                      |   Bin [31m0[m -> [32m192744[m bytes
+ frontend/public/room/h3.jpg                      |   Bin [31m0[m -> [32m207552[m bytes
+ frontend/public/room/h4.jpg                      |   Bin [31m0[m -> [32m59030[m bytes
+ frontend/public/room/h5.jpg                      |   Bin [31m0[m -> [32m193215[m bytes
+ frontend/public/room/h6.jpg                      |   Bin [31m0[m -> [32m206094[m bytes
+ frontend/public/room/h7.jpg                      |   Bin [31m0[m -> [32m179030[m bytes
+ frontend/public/room/nature1.jpg                 |   Bin [31m0[m -> [32m131127[m bytes
+ frontend/public/room/nature2.jpg                 |   Bin [31m0[m -> [32m205363[m bytes
+ frontend/public/room/nature3.jpg                 |   Bin [31m0[m -> [32m115069[m bytes
+ frontend/public/room/nature4.jpg                 |   Bin [31m0[m -> [32m222546[m bytes
+ frontend/public/room/nature5.jpg                 |   Bin [31m0[m -> [32m180936[m bytes
+ frontend/public/room/nature6.jpg                 |   Bin [31m0[m -> [32m203268[m bytes
+ frontend/public/room/nature7.jpg                 |   Bin [31m0[m -> [32m187982[m bytes
+ frontend/public/room/nature8.jpg                 |   Bin [31m0[m -> [32m167620[m bytes
+ frontend/public/room/nature9.jpg                 |   Bin [31m0[m -> [32m188883[m bytes
+ frontend/public/room/o1.jpg                      |   Bin [31m0[m -> [32m220407[m bytes
+ frontend/public/room/o2.jpg                      |   Bin [31m0[m -> [32m115875[m bytes
+ frontend/public/room/o3.jpg                      |   Bin [31m0[m -> [32m184126[m bytes
+ frontend/public/room/o4.jpg                      |   Bin [31m0[m -> [32m163359[m bytes
+ frontend/public/room/o5.jpg                      |   Bin [31m0[m -> [32m159390[m bytes
+ frontend/public/room/o6.jpg                      |   Bin [31m0[m -> [32m258855[m bytes
+ frontend/public/room/s1.jpg                      |   Bin [31m0[m -> [32m114425[m bytes
+ frontend/public/room/s2.jpg                      |   Bin [31m0[m -> [32m175047[m bytes
+ frontend/public/room/s3.jpg                      |   Bin [31m0[m -> [32m162597[m bytes
+ frontend/public/room/s4.jpg                      |   Bin [31m0[m -> [32m257690[m bytes
+ frontend/public/room/s5.jpg                      |   Bin [31m0[m -> [32m182245[m bytes
+ frontend/public/room/s6.jpg                      |   Bin [31m0[m -> [32m158289[m bytes
+ frontend/public/room/s7.jpg                      |   Bin [31m0[m -> [32m137263[m bytes
+ frontend/public/room/s8.jpg                      |   Bin [31m0[m -> [32m413054[m bytes
+ frontend/public/room/sa1.jpg                     |   Bin [31m0[m -> [32m122990[m bytes
+ frontend/public/room/sa2.jpg                     |   Bin [31m0[m -> [32m218639[m bytes
+ frontend/public/room/sa3.jpg                     |   Bin [31m0[m -> [32m90535[m bytes
+ frontend/public/room/sa4.jpg                     |   Bin [31m0[m -> [32m165172[m bytes
+ frontend/public/room/sa5.jpg                     |   Bin [31m0[m -> [32m139908[m bytes
+ frontend/public/room/sa6.jpg                     |   Bin [31m0[m -> [32m166875[m bytes
+ frontend/public/room/sa7.jpg                     |   Bin [31m0[m -> [32m162960[m bytes
+ frontend/public/room/sa8.jpg                     |   Bin [31m0[m -> [32m167709[m bytes
+ frontend/public/room/t1.jpg                      |   Bin [31m0[m -> [32m197406[m bytes
+ frontend/public/room/t2.jpg                      |   Bin [31m0[m -> [32m175286[m bytes
+ frontend/public/room/t3.jpg                      |   Bin [31m0[m -> [32m105869[m bytes
+ frontend/public/room/t4.jpg                      |   Bin [31m0[m -> [32m143131[m bytes
+ frontend/public/room/t5.jpg                      |   Bin [31m0[m -> [32m172460[m bytes
+ frontend/public/room/t6.jpg                      |   Bin [31m0[m -> [32m190594[m bytes
+ frontend/public/room/v1.jpg                      |   Bin [31m0[m -> [32m52373[m bytes
+ frontend/public/room/v2.jpg                      |   Bin [31m0[m -> [32m62182[m bytes
+ frontend/public/room/v3.jpg                      |   Bin [31m0[m -> [32m54500[m bytes
+ frontend/public/room/v4.jpg                      |   Bin [31m0[m -> [32m50769[m bytes
+ frontend/public/room/v5.jpg                      |   Bin [31m0[m -> [32m139332[m bytes
+ frontend/public/room/v6.jpg                      |   Bin [31m0[m -> [32m148490[m bytes
+ frontend/public/room/v7.jpg                      |   Bin [31m0[m -> [32m171676[m bytes
+ frontend/src/Admin/AdminDashboard.js             |   128 [32m+[m
+ frontend/src/App.css                             |     0
+ frontend/src/App.js                              |    80 [32m+[m
+ frontend/src/App.test.js                         |     8 [32m+[m
+ frontend/src/Components/Footer.js                |    49 [32m+[m
+ frontend/src/Components/Hotellist.js             |   117 [32m+[m
+ frontend/src/Components/MyBooking.js             |   147 [32m+[m
+ frontend/src/Components/Navbar.css               |   191 [32m+[m
+ frontend/src/Components/Navbar.js                |   186 [32m+[m
+ frontend/src/Components/ResetPassword.js         |    86 [32m+[m
+ frontend/src/Components/RestaurantCard.js        |    34 [32m+[m
+ frontend/src/Components/RoomCard.js              |   215 [32m+[m
+ frontend/src/Components/SearchBox.js             |    77 [32m+[m
+ frontend/src/Style/AboutSection.css              |   125 [32m+[m
+ frontend/src/Style/Activity.css                  |   325 [32m+[m
+ frontend/src/Style/ActivityDetails.css           |   196 [32m+[m
+ frontend/src/Style/Admin.css                     |   306 [32m+[m
+ frontend/src/Style/AdminRestaurant.css           |   327 [32m+[m
+ frontend/src/Style/AdminScanner.css              |   216 [32m+[m
+ frontend/src/Style/AttractionDetail.css          |   386 [32m+[m
+ frontend/src/Style/CustomCalendar.css            |    62 [32m+[m
+ frontend/src/Style/Explore.css                   |    54 [32m+[m
+ frontend/src/Style/ExploreSection.css            |   159 [32m+[m
+ frontend/src/Style/Favorites.css                 |   134 [32m+[m
+ frontend/src/Style/Footer.css                    |   144 [32m+[m
+ frontend/src/Style/Home.css                      |   177 [32m+[m
+ frontend/src/Style/HotelDetails.css              |   694 [32m+[m
+ frontend/src/Style/Login.css                     |   167 [32m+[m
+ frontend/src/Style/MyBookings.css                |   235 [32m+[m
+ frontend/src/Style/ResetPassword.css             |   112 [32m+[m
+ frontend/src/Style/RestaurantCard.css            |   873 [32m++[m
+ frontend/src/Style/Reviews.css                   |   144 [32m+[m
+ frontend/src/Style/ReviewsResturant.css          |   144 [32m+[m
+ frontend/src/Style/TriptoBot.css                 |   269 [32m+[m
+ frontend/src/Style/adminDashboard.css            |    75 [32m+[m
+ frontend/src/Style/adminOrders.css               |   113 [32m+[m
+ frontend/src/Style/chekout.css                   |   221 [32m+[m
+ frontend/src/Style/hotellist.css                 |   160 [32m+[m
+ frontend/src/Style/orderStatus.css               |   279 [32m+[m
+ frontend/src/Style/payment.css                   |   444 [32m+[m
+ frontend/src/Style/paymentRestaurent.css         |   152 [32m+[m
+ frontend/src/index.css                           |    13 [32m+[m
+ frontend/src/index.js                            |    17 [32m+[m
+ frontend/src/pages/AboutSection.js               |    64 [32m+[m
+ frontend/src/pages/Activity.js                   |    95 [32m+[m
+ frontend/src/pages/ActivityDetails.js            |    28 [32m+[m
+ frontend/src/pages/AdminOrders.js                |   157 [32m+[m
+ frontend/src/pages/AdminRestaurant.js            |   189 [32m+[m
+ frontend/src/pages/AdminScanner.js               |   122 [32m+[m
+ frontend/src/pages/AllRestaurants.js             |    48 [32m+[m
+ frontend/src/pages/AttractionDetail.js           |   207 [32m+[m
+ frontend/src/pages/Checkout.js                   |   287 [32m+[m
+ frontend/src/pages/Explore.js                    |    39 [32m+[m
+ frontend/src/pages/ExploreSection.js             |    92 [32m+[m
+ frontend/src/pages/FavoritesItem.js              |    54 [32m+[m
+ frontend/src/pages/Favorits.js                   |    56 [32m+[m
+ frontend/src/pages/Home.js                       |    95 [32m+[m
+ frontend/src/pages/Hotel.js                      |    77 [32m+[m
+ frontend/src/pages/HotelDetails.js               |   208 [32m+[m
+ frontend/src/pages/Login.js                      |   153 [32m+[m
+ frontend/src/pages/NormalActivityDetail.js       |   207 [32m+[m
+ frontend/src/pages/OrderStatus.js                |   294 [32m+[m
+ frontend/src/pages/Payment.js                    |   286 [32m+[m
+ frontend/src/pages/PaymentRestaurent.js          |   191 [32m+[m
+ frontend/src/pages/Restaurant.js                 |   195 [32m+[m
+ frontend/src/pages/RestaurantDetails.js          |   272 [32m+[m
+ frontend/src/pages/ReviewRestaurent.js           |   143 [32m+[m
+ frontend/src/pages/Reviews.js                    |   123 [32m+[m
+ frontend/src/pages/ScrollToTop.js                |    18 [32m+[m
+ frontend/src/pages/TriptoBot.js                  |   160 [32m+[m
+ frontend/src/reportWebVitals.js                  |    13 [32m+[m
+ frontend/src/setupTests.js                       |     5 [32m+[m
+ package-lock.json                                |   412 [32m+[m
+ package.json                                     |    15 [32m+[m
+ 365 files changed, 31410 insertions(+)

@@ -1,0 +1,386 @@
+/* AttractionDetail.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap');
+
+:root {
+    --brand-green: #1aa260;        /* لونك المفضل */
+    --brand-green-hover: #1aa260;
+    --brand-green-light: #f0fdf4;
+    --text-dark: #0f172a;
+    --text-light: #64748b;
+    --bg-light: #f8fafc;
+    --white: #ffffff;
+    --shadow-soft: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+    --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.attraction-page {
+    background-color: var(--bg-light);
+    min-height: 100vh;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--text-dark);
+}
+
+/* --- Hero Section --- */
+.attr-hero {
+    position: relative;
+    height: 450px;
+    overflow: hidden;
+}
+
+.attr-hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.attr-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.attr-back {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    padding: 10px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.attr-back:hover {
+    background: var(--white);
+    color: var(--brand-green);
+}
+
+.attr-main-info h1 {
+    color: white;
+    font-size: 2.8rem;
+    font-weight: 800;
+    margin-bottom: 5px;
+}
+
+.attr-main-info p {
+    color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* --- Content Container --- */
+.attr-container {
+    max-width: 1100px;
+    margin: -60px auto 60px;
+    padding: 0 20px;
+    position: relative;
+}
+
+.section-title {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 24px;
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 30px;
+}
+
+.section-title h3 {
+    color: var(--brand-green);
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+}
+
+/* --- Game Cards --- */
+.games-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.game-full-card {
+    display: flex;
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.game-full-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--brand-green);
+}
+
+.game-img-box {
+    width: 300px;
+    min-width: 300px;
+}
+
+.game-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.game-details {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.game-price {
+    background: var(--brand-green-light);
+    color: var(--brand-green);
+    padding: 5px 15px;
+    border-radius: 10px;
+    font-weight: 800;
+}
+
+.book-game-btn {
+    align-self: flex-end;
+    background: var(--brand-green);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.book-game-btn:hover {
+    background: var(--brand-green-hover);
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.3);
+}
+
+/* --- Modals (Popups) --- */
+.qr-modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 23, 42, 0.7);
+    backdrop-filter: blur(8px);
+    display: flex;
+    justify-content: center; /* توسيط أفقي */
+    align-items: center;     /* توسيط عمودي */
+    z-index: 2000;
+    padding: 20px;
+}
+
+.booking-popup, .digital-ticket {
+    background: white;
+    padding: 35px;
+    border-radius: 28px;
+    width: 100%;
+    max-width: 400px; /* حجم صغير ومناسب */
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    animation: popIn 0.3s ease-out;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-ticket {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--bg-light);
+    border: none;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    transition: 0.2s;
+}
+
+.close-ticket:hover {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+/* --- Forms Inside Modals --- */
+.input-field {
+    margin-bottom: 15px;
+}
+
+.input-field label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.input-field input:focus {
+    border-color: var(--brand-green);
+    background: white;
+}
+
+.total-box {
+    background: var(--brand-green-light);
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    margin: 20px 0;
+    color: var(--brand-green);
+    font-weight: 700;
+}
+
+/* --- Buttons in Payment/Booking --- */
+.confirm-btn {
+    width: 100%;
+    background: var(--brand-green);
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.confirm-btn:hover {
+    background: var(--brand-green-hover);
+}
+
+.back-btn {
+    width: 100%;
+    background: transparent;
+    border: 2px solid #e2e8f0;
+    color: var(--text-light);
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.back-btn:hover {
+    background: #f1f5f9;
+}
+/* --- تصغير طول التذكرة النهائية --- */
+.digital-ticket {
+    background: white;
+    padding: 20px 25px; /* تقليل المسافات الداخلية */
+    border-radius: 24px;
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow-lg);
+}
+
+.ticket-top {
+    margin-bottom: 10px;
+}
+
+.ticket-top h2 {
+    font-size: 1.4rem; /* تصغير العنوان */
+    margin: 5px 0;
+    color: var(--brand-green);
+}
+
+.ticket-top p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+/* تصغير صندوق الـ QR */
+.ticket-qr-box {
+    padding: 12px;
+    background: #f8fafc;
+    border: 1.5px dashed #cbd5e1;
+    border-radius: 16px;
+    display: inline-block;
+    margin: 15px 0;
+}
+
+/* جعل المعلومات في سطر واحد لتقليل الطول */
+.ticket-info-grid {
+    display: flex; /* تحويله لـ flex بدلاً من grid */
+    justify-content: space-between;
+    gap: 10px;
+    background: #f8fafc;
+    padding: 12px;
+    border-radius: 12px;
+    margin-bottom: 15px;
+}
+
+.ticket-info-grid div {
+    text-align: center;
+    flex: 1;
+}
+
+.ticket-info-grid span {
+    font-size: 0.7rem; /* خط أصغر للعناوين */
+    color: var(--text-light);
+    display: block;
+    margin-bottom: 2px;
+}
+
+.ticket-info-grid strong {
+    font-size: 0.85rem; /* خط أصغر للقيم */
+    color: var(--text-dark);
+    display: block;
+    white-space: nowrap;
+}
+
+/* تصغير الملاحظة النهائية */
+.ticket-note {
+    font-size: 0.8rem;
+    color: var(--text-light);
+    margin-top: 10px;
+}
+
+/* زر الإغلاق ليكون أصغر */
+.close-ticket {
+    top: 15px;
+    right: 15px;
+    width: 28px;
+    height: 28px;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .game-full-card { flex-direction: column; }
+    .game-img-box { width: 100%; min-width: 100%; height: 200px; }
+    .attr-main-info h1 { font-size: 2rem; }
+    .booking-popup { width: 95%; padding: 20px; }
+}

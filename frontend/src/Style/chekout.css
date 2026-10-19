@@ -1,0 +1,221 @@
+.checkout-page-area {
+    font-family: 'Inter', sans-serif;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* STEP BAR */
+.stepper-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 750px;
+    margin: 40px auto 60px;
+    position: relative;
+}
+
+/* الخط الرمادي */
+.stepper-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #e0e0e0;
+    z-index: 0;
+}
+
+/* الخط الأخضر */
+.stepper-progress {
+    position: absolute;
+    top: 18px;
+    left: 0;
+    height: 2px;
+    background: #28a745;
+    z-index: 1;
+    transition: width 0.4s ease;
+}
+
+/* STEP ITEM */
+.step-item {
+    position: relative;
+    flex: 1;
+    text-align: center;
+    z-index: 2;
+}
+
+/* الدائرة */
+.step-item span {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #666;
+    margin-bottom: 8px;
+    border: 2px solid #fff;
+}
+
+/* active + completed */
+.step-item.active span,
+.step-item.completed span {
+    background: #28a745;
+    color: white;
+}
+
+/* النص */
+.step-item p {
+    font-size: 13px;
+    color: #777;
+}
+
+.step-item.active p {
+    color: #28a745;
+    font-weight: bold;
+}
+
+
+
+
+/* GRID */
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* CARD */
+.luxury-card {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+/* FORM */
+.field-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+input, textarea, select {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* BUTTON */
+.confirm-btn {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    width: 100%;
+    cursor: pointer;
+}
+
+/* SUMMARY */
+.summary-card {
+    background: white;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+.summary-line {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.summary-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+}
+.summary-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.summary-img {
+  width: 45px;
+  height: 45px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+.order-type-toggle {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+
+.icon {
+  margin-right: 8px;
+}
+/* العنوان */
+.order-type-title {
+  margin-bottom: 8px;
+  font-size: 16px;
+  font-weight: 500;
+   text-align: center;
+}
+
+/* الكونتينر */
+.order-type-toggle {
+  position: relative;
+  display: flex;
+  background: #eee;
+  border-radius: 30px;
+  padding: 4px;
+  width: 300px;
+}
+
+/* الزر */
+.pickup-btn {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 10px;
+  border-radius: 30px;
+  cursor: pointer;
+  z-index: 2;
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+}
+
+/* النص active */
+.pickup-btn.active {
+  color: white;
+}
+
+/* 🔥 السلايدر الأخضر */
+.order-type-toggle::before {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 50%;
+  height: calc(100% - 8px);
+  background: #28a745;
+  border-radius: 30px;
+  transition: 0.3s;
+}
+
+/* لما يكون Delivery */
+.order-type-toggle.delivery::before {
+  transform: translateX(100%);
+}
+.order-type-toggle {
+  margin: 20px auto;
+}

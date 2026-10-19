@@ -1,0 +1,134 @@
+.favorites-page-container {
+    padding: 120px 10% 50px;
+    background-color: #f9f9f9;
+    min-height: 100vh;
+}
+
+.favorites-title {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+
+.fav-list-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.fav-item-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+.fav-item-wrapper .hotel-card {
+    display: flex !important;
+    flex-direction: row !important;
+    height: 200px;
+    width: 100%;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.fav-item-wrapper .image-section {
+    width: 300px !important;
+    height: 100% !important;
+}
+
+.fav-item-wrapper .info-section {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* زر السلة */
+.trash-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: white;
+    color: #e74c3c;
+    border: 1px solid #eee;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: 0.3s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.trash-btn:hover {
+    background: #e74c3c;
+    color: white;
+    transform: scale(1.1);
+}
+.fav-item-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.trash-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    color: #ff4d4d;
+    border: 1px solid #eee;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 20;
+    transition: 0.3s;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.trash-btn:hover {
+    background: #ff4d4d;
+    color: white;
+    transform: scale(1.1);
+}
+
+.favorites-page-container h4 {
+    font-family: 'Playfair Display', serif; 
+    font-size: 2rem;
+    color: #333; 
+    font-weight: 700;
+  
+    text-align: center;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+
+.favorites-page-container h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #27ae60; 
+    border-radius: 2px;
+}
+
+.fav-item-wrapper .map-button {
+    width: auto !important;
+    padding: 5px 20px !important;
+    align-self: flex-start;
+}

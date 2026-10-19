@@ -1,0 +1,216 @@
+/* AdminScanner.css - Tripto AI Theme */
+
+:root {
+    --primary-color: #1aa260;
+    --primary-dark: #14804c;
+    --white: #ffffff;
+    --bg-light: #f8faf9;
+    --text-main: #2d3436;
+    --shadow: 0 10px 30px rgba(26, 162, 96, 0.1);
+}
+
+.scanner-page {
+    min-height: 100vh;
+    background-color: var(--bg-light);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--text-main);
+}
+
+
+
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 20px;
+    transition: transform 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: translateX(-5px);
+}
+
+.scanner-header h1 {
+    font-size: 2.5rem;
+    margin: 10px 0;
+    color: var(--text-main);
+}
+
+.scanner-header .highlight {
+    color: var(--primary-color);
+}
+
+.scanner-header p {
+    color: #636e72;
+    font-size: 1.1rem;
+}
+
+/* Main Container */
+.scanner-container {
+    width: 100%;
+    max-width: 500px;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: var(--shadow);
+    border: 1px solid rgba(26, 162, 96, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* QR Scanner UI Customization */
+#reader {
+    border: none !important;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+#reader__scan_region {
+    background: #f0f0f0;
+}
+
+/* Buttons inside the QR library */
+#reader button {
+    background-color: var(--primary-color) !important;
+    color: white !important;
+    border: none !important;
+    padding: 10px 20px !important;
+    border-radius: 8px !important;
+    cursor: pointer !important;
+    font-weight: 600 !important;
+    transition: background 0.3s !important;
+}
+
+#reader button:hover {
+    background-color: var(--primary-dark) !important;
+}
+
+/* Result Cards */
+.result-card {
+    text-align: center;
+    padding: 20px;
+}
+
+.status-header {
+    margin-bottom: 20px;
+}
+
+.status-header h3 {
+    margin-top: 15px;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* AI Voice Box Section */
+.ai-voice-box {
+    background: rgba(26, 162, 96, 0.05);
+    border-left: 4px solid var(--primary-color);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 25px 0;
+    text-align: left;
+}
+
+.voice-indicator {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.voice-indicator.active {
+    animation: pulse 1.5s infinite;
+}
+
+.ai-message {
+    font-style: italic;
+    color: var(--text-main);
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* Loading State */
+.loading-state {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.ai-loader {
+    width: 60px;
+    height: 60px;
+    border: 5px solid rgba(26, 162, 96, 0.1);
+    border-top: 5px solid var(--primary-color);
+    border-radius: 50%;
+    margin: 0 auto 20px;
+    animation: spin 1s linear infinite;
+}
+
+/* Common Reset Button */
+.reset-btn {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.reset-btn:hover {
+    background-color: var(--primary-dark);
+    box-shadow: 0 5px 15px rgba(26, 162, 96, 0.3);
+}
+
+/* Footer */
+.footer-note {
+    margin-top: 30px;
+    font-size: 0.9rem;
+    color: #b2bec3;
+}
+
+/* Animations */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.animate-in {
+    animation: fadeInUp 0.5s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Error State Overrides */
+.result-card.error h3 {
+    color: #d63031; /* لون أحمر هادئ للخطأ لكسر اللون الأخضر فقط عند الفشل */
+}
+
+.result-card.error .reset-btn {
+    background-color: #636e72;
+}

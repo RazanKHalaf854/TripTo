@@ -1,0 +1,235 @@
+/* --- MyBookings.css (النسخة الكاملة والمرشقة) --- */
+
+.bookings-page-container {
+    max-width: 950px; /* صغرنا الحاوية ليكون التصميم ملموم */
+    margin: 30px auto;
+    padding: 0 15px;
+    font-family: 'Poppins', sans-serif;
+    height: auto;
+}
+
+.page-title {
+    color: #1e272e;
+    font-size: 1.4rem;
+    font-weight: 800;
+    margin-bottom: 25px;
+    border-left: 5px solid #27ae60;
+    padding-left: 12px;
+    letter-spacing: 0.5px;
+}
+
+.bookings-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+/* تصميم الكرت الجديد - أصغر وأرشق */
+.booking-card {
+    display: flex;
+    background: #fff;
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid #f1f2f6;
+    min-height: 160px; /* تقليل الارتفاع */
+    height: auto; 
+}
+
+.booking-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+/* تعديل حجم الصورة لتكون متناسقة */
+.booking-image-wrapper {
+    width: 200px; /* تصغير عرض الصورة */
+    min-height: 160px;
+    flex-shrink: 0;
+}
+
+.booking-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.booking-content {
+    padding: 12px 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* توزيع المحتوى بشكل مرتب */
+}
+
+.booking-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 5px;
+}
+
+.hotel-name-tag {
+    font-size: 0.75rem;
+    color: #27ae60;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.booking-header h3 {
+    font-size: 1.05rem;
+    color: #2d3436;
+    margin: 2px 0;
+    font-weight: 700;
+}
+
+/* Status Badges */
+.status-badge {
+    padding: 4px 12px;
+    border-radius: 50px;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.status-badge.pending { background: #fff9db; color: #f08c00; border: 1px solid #ffe066; }
+.status-badge.confirmed { background: #e3fcf4; color: #27ae60; border: 1px solid #27ae60; }
+.status-badge.cancelled { background: #fff5f5; color: #fa5252; border: 1px solid #ffc9c9; }
+
+/* قسم مبالغ الدفع (Luxury Style) */
+.price-section-refined {
+    margin: 10px 0;
+    padding: 10px 15px;
+    background-color: #fcfdfc;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.price-row.total {
+    border-bottom: 1px dashed #eee;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+}
+
+.price-label {
+    font-weight: 600;
+    color: #666;
+    font-size: 0.85rem;
+}
+
+.price-value {
+    color: #333;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.price-value.emerald {
+    color: #27ae60;
+}
+
+.partial-payment-badge {
+    color: #e67e22;
+    font-size: 0.75rem;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 10px;
+    background: #fffdf9;
+    border-radius: 6px;
+    border-left: 3px solid #e67e22;
+}
+
+/* معلومات التاريخ والغريد */
+.date-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #636e72;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.date-icon-green {
+    color: #27ae60;
+    font-size: 0.9rem;
+}
+
+.details-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    background: #f8fbf9;
+    padding: 8px 12px;
+    border-radius: 8px;
+}
+
+.detail-item {
+    font-size: 0.75rem;
+    color: #2d3436;
+}
+
+/* Admin Actions */
+.admin-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.confirm-btn, .cancel-btn {
+    padding: 6px 15px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.75rem;
+    cursor: pointer;
+    border: none;
+    transition: 0.3s;
+}
+
+.confirm-btn { background: #27ae60; color: white; }
+.confirm-btn:hover { background: #219150; }
+.cancel-btn { background: #fff; color: #fa5252; border: 1px solid #fa5252; }
+.cancel-btn:hover { background: #fff5f5; }
+
+/* See All Button */
+.see-all-container {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.see-all-btn {
+    padding: 12px 30px;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: 0.3s ease;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.2);
+}
+
+.see-all-btn:hover {
+    background-color: #219150;
+    transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 750px) {
+    .booking-card { flex-direction: column; }
+    .booking-image-wrapper { width: 100%; height: 160px; }
+    .details-grid { grid-template-columns: 1fr 1fr; }
+}

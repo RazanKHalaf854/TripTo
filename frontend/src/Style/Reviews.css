@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;500;700;800&display=swap');
+
+.tripto-wrapper {
+  max-width: 1200px;
+  margin: 10px auto;
+  padding: 5px;
+  font-family:  sans-serif;
+  color: #1b4332;
+}
+
+.tripto-main-title { 
+  font-size: 1.8rem; 
+  font-weight: 500; 
+  margin-bottom: 30px; 
+  color: black; 
+}
+
+
+.tripto-header-box {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 45px;
+  background: linear-gradient(135deg, #f0f7f4 0%, #d8e6df 100%);
+  padding: 20px;
+  border-radius: 30px;
+  margin-bottom: 40px;
+  align-items: center;
+  border: 1px solid #c7d9d0;
+}
+
+.tripto-score-section {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  flex: 1;
+  min-width: 280px;
+}
+
+.tripto-big-circle {
+  width: 90px; height: 90px;
+  background: #28a745;
+  color: white;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(45, 106, 79, 0.2);
+}
+
+.avg-num { font-size: 1.8rem; font-weight: 800; line-height: 1; }
+.avg-label { font-size: 0.7rem; opacity: 0.9; margin-top: 2px;}
+
+.tripto-verdict h3 { margin: 0; font-size: 1.5rem; color:#227636; }
+.tripto-verdict p { margin: 5px 0 0; color: #1f7833; font-size: 0.95rem; }
+
+
+.tripto-bars-section {
+  flex: 1.5;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tripto-bar-item { display: flex; align-items: center; gap: 12px; }
+.tripto-bar-item .num { font-size: 0.85rem; width: 10px; font-weight: 600; color: #2d6a4f; }
+.bar-rail { flex: 1; height: 8px; background: rgba(255, 255, 255, 0.5); border-radius: 10px; overflow: hidden; }
+.bar-track { height: 100%; background: #52b788; border-radius: 10px; transition: width 1s ease; }
+.tripto-bar-item .percent { font-size: 0.8rem; color: #52796f; width: 35px; text-align: right; font-weight: 500; }
+
+
+.tripto-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 25px;
+}
+
+.tripto-card {
+  background: white;
+  border-radius: 28px;
+  padding: 25px;
+  border: 1px solid #e9f0ee;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.tripto-card:hover { 
+  transform: translateY(-6px); 
+  box-shadow: 0 15px 40px rgba(45, 106, 79, 0.08); 
+  border-color: #d8f3dc;
+}
+
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 20px; }
+.user-info { display: flex; gap: 15px; align-items: center; }
+
+.tripto-avatar-box {
+  width: 48px; height: 48px;
+  background: #d8f3dc; color: #081c15;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 1.2rem;
+}
+
+.user-name { margin: 0; font-size: 1rem; font-weight: 700; color: #081c15; }
+.post-date { margin: 0; font-size: 0.8rem; color: #95adbe; }
+
+.rating-pill {
+  background: #28a745; color: #ffffff;
+  padding: 5px 12px; border-radius: 12px;
+  font-weight: 700; font-size: 0.85rem;
+}
+
+.comment-text { font-size: 0.95rem; line-height: 1.6; color: #40514e; margin-bottom: 15px; }
+
+.media-box { border-radius: 20px; overflow: hidden; margin: 15px 0; border: 1px solid #f0f0f0; }
+.media-box img { width: 100%; display: block; max-height: 250px; object-fit: cover; }
+
+.read-more-link {
+  background: none; border: none; color: #28a745; font-weight: 700;
+  font-size: 0.85rem; cursor: pointer; padding: 0; text-decoration: underline;
+  margin-top: auto; align-self: flex-start;
+}
+
+
+.tripto-load-all {
+  display: block; margin: 50px auto;
+  background: #081c15; color: white;
+  padding: 16px 45px; border-radius: 20px;
+  border: none; font-weight: 700; cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.tripto-load-all:hover { 
+  background: #1b4332; 
+  transform: scale(1.05); 
+  box-shadow: 0 10px 25px rgba(8, 28, 21, 0.2); 
+}
+
+
+.fade-in { animation: fadeIn 0.4s ease-out; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }

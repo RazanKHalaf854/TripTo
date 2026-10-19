@@ -1,0 +1,160 @@
+
+.category-section {
+    padding: 20px 40px;
+    background-color: #f9f9f9;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.region-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.menuContainer {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 10px 5px;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.menuContainer::-webkit-scrollbar {
+    display: none;
+}
+
+.menuContainer a {
+    flex: 0 0 250px; 
+    text-decoration: none;
+    color: inherit;
+    display: block; 
+}
+
+
+.hotel-card {
+    width: 100%; 
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+    border: 1px solid #eee;
+    height: 100%;
+}
+
+.hotel-card:hover {
+    transform: translateY(-5px);
+}
+
+.image-section {
+    position: relative;
+    height: 240px;
+    overflow: hidden;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.heart-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: white;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #888;
+    z-index: 2; 
+}
+
+.info-section {
+    padding: 12px;
+}
+
+.rating-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+.rating-score {
+    background: #eef2ff;
+    color: #21ba6f;
+    font-weight: bold;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+.rating-label {
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.review-count {
+    font-size: 10px;
+    color: #8d99ae;
+}
+
+.hotel-title {
+    font-size: 15px;
+    margin: 5px 0;
+    color: #2b2d42;
+}
+
+.hotel-desc {
+    font-size: 11px;
+    color: #6c757d;
+    height: 32px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+.map-button {
+    background-color: #21ba6f;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 12px;
+    cursor: pointer;
+    width: 55%;
+}
+
+.call-info {
+    font-size: 10px;
+    color: #adb5bd;
+    margin-top: 10px;
+    text-align: right;
+}
+
+.arrow-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    margin-left: 5px;
+}
+.location-section {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+

@@ -1,0 +1,144 @@
+/* TriptoFooter.css */
+
+.tripto-footer {
+    background-color: #ffffff; /* White Background */
+    color: #1a2e05; /* Deep Green Text */
+    padding: 80px 0 30px 0;
+    position: relative;
+    border-top: 1px solid #e2e8f0;
+    font-family: 'Poppins', sans-serif; /* خط عصري للإنكليزي */
+    direction: ltr; /* اتجاه الكتابة من اليسار */
+    width: 100%;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 50px;
+    padding: 0 30px;
+}
+
+/* Logo Section */
+.footer-section.about .footer-logo {
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    color: #1aa260; /* Emerald Green */
+}
+
+.footer-section.about .footer-logo span {
+    color: #1aa260; /* Bright Green */
+}
+
+.footer-section.about p {
+    color: #4b5563;
+    max-width: 350px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+/* Titles */
+.footer-section h3 {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    font-weight: 700;
+    color: #1aa260;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Links List */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 12px;
+}
+
+.footer-section ul li a {
+    color: #4b5563;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-section ul li a:hover {
+    color: #1aa260;
+    padding-left: 8px;
+}
+
+/* Subscription Form */
+.footer-section.contact p {
+    margin-bottom: 20px;
+    font-size: 0.9rem;
+    color: #4b5563;
+}
+
+.subscribe-form {
+    display: flex;
+    background: #f0fdf4; /* Very Light Green */
+    padding: 5px;
+    border-radius: 12px;
+    border: 1px solid #d1fae5;
+}
+
+.subscribe-form input {
+    background: transparent;
+    border: none;
+    padding: 12px 15px;
+    color: #1aa260;
+    width: 100%;
+    outline: none;
+    font-family: inherit;
+}
+
+.subscribe-form button {
+    background-color: #1aa260; /* Emerald */
+    color: #ffffff;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s ease-in-out;
+}
+
+.subscribe-form button:hover {
+    background-color: #1aa260;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+/* Bottom Bar */
+.footer-bottom {
+    text-align: center;
+    margin-top: 60px;
+    padding: 20px;
+    border-top: 1px solid #f0fdf4;
+}
+
+.footer-bottom p {
+    color: #9ca3af;
+    font-size: 0.85rem;
+}
+
+/* Responsiveness */
+@media (max-width: 992px) {
+    .footer-container {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+    .subscribe-form {
+        flex-direction: row;
+    }
+}

@@ -1,0 +1,306 @@
+
+
+.admin-page-container {
+    background-color: #fdfdfd; 
+    padding: 30px 50px;
+    width: 100%;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.admin-page-container .hotels-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+    width: 100%;
+}
+
+.admin-page-container .hotel-card {
+    background: #ffffff;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    width: 100%;
+    height: 180px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.admin-page-container .hotel-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+.admin-page-container .hotel-card img {
+    width: 260px;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.admin-page-container .info-section {
+    padding: 10px 22px; 
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    overflow: hidden;
+}
+
+.admin-page-container .rating-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 5px;
+}
+
+.admin-page-container .rating-score {
+    background: #1aa260;
+    color: white;
+    padding: 2px 8px; 
+    border-radius: 5px;
+    font-weight: 700;
+    font-size: 11px; 
+}
+
+.admin-page-container .rating-label {
+    font-weight: 600;
+    color: #1aa260;
+    font-size: 12px;
+}
+
+.admin-page-container .hotel-title {
+    font-size: 19px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin: 2px 0;
+}
+
+.admin-page-container .hotel-desc {
+    font-size: 10px; 
+    color: #64748b; 
+    line-height: 1.5;
+    max-width: 85%;
+}
+
+.admin-page-container .admin-actions-zone {
+    margin-top: auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-top: 10px;
+}
+
+.admin-page-container .edit-btn, 
+.admin-page-container .delete-btn {
+    padding: 5px 14px; 
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: 0.2s ease-in-out;
+}
+
+.admin-page-container .edit-btn {
+    background-color: #f1f5f9;
+    color: #1aa260;
+}
+
+.admin-page-container .edit-btn:hover {
+    background-color: #e2e8f0;
+}
+
+.admin-page-container .delete-btn {
+    background-color: #fff1f2;
+    color: #e11d48;
+    border: 1px solid #ffe4e6;
+}
+
+.admin-page-container .delete-btn:hover {
+    background-color: #e11d48;
+    color: #fff;
+}
+
+.admin-page-container .call-info {
+    font-size: 11px;
+    color: #94a3b8;
+    text-align: right;
+    margin-top: 5px;
+}
+/* الخلفية المغبشة اللي ورا المودال */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* لون أسود شفاف */
+    backdrop-filter: blur(5px); /* حركة التغبيش الفخمة */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* صندوق المودال نفسه */
+.edit-hotel-modal {
+    background: white;
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    position: relative;
+    animation: slideUp 0.4s ease-out; /* حركة دخول ناعمة */
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.edit-hotel-modal h3 {
+    color: #1e272e;
+    margin-bottom: 20px;
+    font-weight: 800;
+    border-bottom: 2px solid #1aa260;
+    padding-bottom: 10px;
+}
+
+.modal-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.modal-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #7f8c8d;
+    margin-bottom: 5px;
+}
+
+.modal-group input, .modal-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    font-family: inherit;
+    background: #f9f9f9;
+}
+
+.modal-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.save-btn {
+    flex: 2;
+    background: #1aa260;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cancel-btn {
+    flex: 1;
+    background: #f1f2f6;
+    color: #2d3436;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.save-btn:hover { background: #1aa260; }
+/* تنسيق الكارد الأساسي للأدمن */
+.admin-hotel-item {
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+/* التنسيق الجمالي للفندق المخفي */
+.admin-hotel-item .hotel-hidden {
+    background-color: #fcfcfc !important;
+    border: 2px dashed #d1d1d1 !important; 
+    opacity: 0.7;
+    filter: grayscale(1); 
+    transform: scale(0.98); 
+}
+
+/* علامة الـ Hidden بتصميم عصري (Badge) */
+.hidden-label {
+    background: rgba(231, 76, 60, 0.9); 
+    backdrop-filter: blur(4px);
+    color: white;
+    padding: 6px 14px;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+    font-weight: 600;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-radius: 50px; 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* تأثير عند تمرير الماوس (Hover) */
+.admin-hotel-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+/* --- تعديل الأزرار لتكون أصغر وأنعم --- */
+.admin-actions-zone {
+    display: flex;
+    gap: 8px;
+    padding: 10px; /* صغرنا الـ padding الداخلي */
+    background: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid #eee;
+    justify-content: flex-end; /* بيخلي الأزرار تروح عاليمين بشكل أرتب */
+}
+
+.show-btn, .hide-btn {
+    flex: 0 1 auto; /* بيخلي حجم الزر على قد النص */
+    padding: 5px 12px; /* تصغير الارتفاع والعرض */
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 11px; /* تصغير الخط ليعطي طابع فخم */
+    cursor: pointer;
+    transition: 0.3s;
+    border: none;
+    white-space: nowrap;
+}
+
+.show-btn {
+    background: #27ae60;
+    color: white;
+}
+
+.hide-btn {
+    background: #f39c12; 
+    color: white;
+}
+
+.show-btn:hover, .hide-btn:hover {
+    filter: brightness(1.1);
+    transform: scale(1.05); /* حركة تكبير بسيطة عند الـ Hover */
+}
